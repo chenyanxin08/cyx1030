@@ -3,21 +3,12 @@
 <head>
     <meta charset="utf-8">
 </head>
-<style>
-    body{
-        width: 30%;
-        height: 100%;
-        margin-left: 10%;
-        text-align: center;
-        border: 1px solid black;
-    }
-</style>
 <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
 <body>
 </body>
 <script>
     $(function(){
-        var a=window.location.href.split("=")[1];
+        var a=window.location.href.split('=')[1];
         console.log(a);
         if(a){
             $.ajax({
@@ -28,7 +19,7 @@
                 },
                 success:function(e){
                     console.log(e);
-                    $('body').append("<p>"+ e[0].detail+"</p>")
+                    $('body').append("<p>"+ e[0].content+"</p>")
                 }
             })
         }else{
@@ -38,7 +29,8 @@
                 success:function(e){
                     for(var  i=0;i< e.length;i++){
                         console.log(e[i].name);
-                        $('body').append("<a href='b.html?id="+e[i].id+"'>"+e[i].name+"</a><br/>")
+                        $("body").append('<a href="b.html?id='+e[i].id+'">'+e[i].name+'</a><br/>')
+
                     }
                 }
             })
